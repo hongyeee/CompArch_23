@@ -176,7 +176,7 @@ size was subjected to three trials.
    |500,000|440.835|567,137,667|
    |1,000,000|1851.317| 540,203,207|
 
-  : Runtimes and cmp Instructions per second of the sorting program.
+  Table 1 : Runtimes and cmp Instructions per second of the sorting program.
 
 The data reveals a notable trend: smaller datasets have a comparatively
 higher rate of 'cmp' instructions per second. Several factors underpin
@@ -202,7 +202,7 @@ this observation:
    |500,000|250,000,000,000|249,996,989,360|
    |1,000,000|1,000,000,000,000|999,996,505,180|
 
-  : Comparison of theoretical complexity and observed cmp Instructions.
+  Table 2 : Comparison of theoretical complexity and observed cmp Instructions.
 
 The table above compares the theoretical complexity of Bubble Sort
 ($O(n^2)$) with the observed number of comparisons. It's evident that
@@ -226,7 +226,7 @@ range.
    |500,000|1.839|      
    |1,000,000|3.64|9      
 
-  : Running time excluding the sorting time.
+  Table 3 : Running time excluding the sorting time.
 
 The table above illustrates the correlation between the number of
 coordinates and the corresponding overhead time, excluding the sorting
