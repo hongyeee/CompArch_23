@@ -1,4 +1,4 @@
-# Introduction
+# 1. Introduction
 
 This project involves the implementation of a program in x86-64 Linux
 assembly language. The program's primary task is to read (x, y)
@@ -6,7 +6,7 @@ coordinates from a given file, sort them based on their y-values, and
 output the sorted coordinates. This report provides a comprehensive
 explanation of the code implementation while evaluating its performance.
 
-# Design Decisions
+# 2. Design Decisions
 
 Bubble Sort was selected due to its straightforward logic and inherent
 in-place sorting nature. The mechanism involves iterating over the list
@@ -19,7 +19,7 @@ be the most efficient for extensive datasets, its implementation in
 assembly language serves as an effective illustration of sorting
 algorithms in a low-level language setting.
 
-# Implementation
+# 3. Implementation
 
 The process began by configuring an array to store the (x, y)
 coordinates read from the input file. Each element of the array
@@ -29,13 +29,13 @@ algorithm was employed to sort these coordinates based on their
 y-values. The sorted (x, y) pairs were then formatted and outputted in
 the same format as the input file.
 
-## Bubble Sort Implementation
+## 3.1 Bubble Sort Implementation
 
 The Bubble Sort implementation aims to sort the (x, y) coordinates based
 on their y-values. The sorting process takes advantage of registers for
 optimized handling of data during the sorting mechanism.
 
-### Initialization
+### 3.1.1 Initialization
 
 Initially, the starting address of the parsed data is backed up in the
 `%r8` register. The number of (x, y) pairs is loaded into the `%r9`
@@ -43,13 +43,13 @@ register. By shifting left by 4, it's converted to bytes, since each
 pair is 16 bytes: 8 bytes for x and 8 for y. The `%r9` register is then
 updated to point to the end of the list.
 
-### Outer Loop
+### 3.1.2 Outer Loop
 
 The outer loop is responsible for going through the entire array. The
 start address for this loop is stored in the `%r10` register, and the
 swap flag is initialized to 0 using `%r15` register.
 
-### Inner Loop and Swapping
+### 3.1.3 Inner Loop and Swapping
 
 ``` gas
 inner_loop:
@@ -70,7 +70,7 @@ involves saving the values of the pairs in temporary registers and then
 interchanging their positions in the array. Once a swap occurs, the swap
 flag is set to 1.
 
-### Checking and Finalizing
+### 3.1.4 Checking and Finalizing
 
 ``` gas
 check_swap:
@@ -90,12 +90,12 @@ current scope for sorting is decremented, and the outer loop is executed
 again. This narrowing of scope ensures optimization in the number of
 comparisons made during the sort.
 
-### Termination
+### 3.1.5 Termination
 
 Upon ensuring that the data is fully sorted, the program exits the
 sorting routine.
 
-## Print
+## 3.2 Print
 
 Following the sorting of the coordinates, the program proceeded with the
 printing function. This function traversed the sorted data array, with
@@ -113,7 +113,7 @@ and formatting during the printing process.
 The program continued this process until all coordinate pairs from the
 sorted array were printed.
 
-## Error Handling
+## 3.3 Error Handling
 
 Various error-handling routines have been incorporated in the program to
 address potential issues that might arise during its execution. The
@@ -141,14 +141,14 @@ following are the identified error conditions:
 All these error handlers invoke the `handle_error` routine to display
 the corresponding error message and subsequently exit the program.
 
-# Program Evaluation
+# 4. Program Evaluation
 
 This section systematically presents the performance evaluation of the
 sorting program, with datasets of varying sizes, and offers a
 comprehensive discussion of the results, comparing the observed findings
 with theoretical expectations.
 
-## Dataset and Procedure
+## 4.1 Dataset and Procedure
 
 Datasets of coordinates, ranging from 10,000 to potentially 5,000,000,
 were employed for the assessment. To ensure robustness, each dataset
@@ -166,7 +166,7 @@ size was subjected to three trials.
 
 4.  Derive the rate of comparisons per second for each test instance.
 
-## Runtime Evaluation and Discussion
+## 4.2 Runtime Evaluation and Discussion
 
    number of coordinates   time in seconds   cmp Instructions per second
   ----------------------- ----------------- -----------------------------
@@ -192,7 +192,7 @@ this observation:
     quadratic behavior, certain inputs or early termination conditions
     might influence its performance.
 
-## Theoretical Complexity Evaluation and Discussion
+## 4.3 Theoretical Complexity Evaluation and Discussion
 
    number of coordinates   theoretical complexity   cmp Instructions
   ----------------------- ------------------------ ------------------
@@ -216,7 +216,7 @@ Sort may not be the most efficient for larger datasets, the consistency
 in its behavior can be leveraged for datasets within the observed size
 range.
 
-## Overhead time Evaluation and Discussion
+## 4.4 Overhead time Evaluation and Discussion
 
    number of coordinates   time in seconds  
   ----------------------- ----------------- --
@@ -237,7 +237,7 @@ theoretical analysis, demonstrating that the program's overhead time
 scales linearly with the file size, a characteristic expected in $O(n)$
 algorithms.
 
-# Discussion
+# 5. Discussion
 
 The implementation of the Bubble Sort algorithm in assembly language
 provided an opportunity to examine algorithm performance at a granular
@@ -269,7 +269,7 @@ algorithms might be chosen for larger datasets, understanding the
 foundational principles and performance characteristics of simpler
 algorithms like Bubble Sort remains crucial.
 
-# Conclusion
+# 6. Conclusion
 
 In this project, we explored low-level programming and algorithm design
 using Bubble Sort as a case study. Its behavior in assembly, along with
