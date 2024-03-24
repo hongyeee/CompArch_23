@@ -194,13 +194,13 @@ this observation:
 
 ## 4.3 Theoretical Complexity Evaluation and Discussion
 
-   number of coordinates   theoretical complexity   cmp Instructions
-  ----------------------- ------------------------ ------------------
-          10,000                100,000,000            99,964,560
-          50,000               2,500,000,000         2,499,904,418
-          100,000              10,000,000,000        9,999,618,570
-          500,000             250,000,000,000       249,996,989,360
-         1,000,000           1,000,000,000,000      999,996,505,180
+   |number of coordinates|theoretical complexity|cmp Instructions|
+   |:---:|:---:|:---:|
+   |10,000|100,000,000|99,964,560|
+   |50,000|2,500,000,000|2,499,904,418|
+   |100,000|10,000,000,000|9,999,618,570|
+   |500,000|250,000,000,000|249,996,989,360|
+   |1,000,000|1,000,000,000,000|999,996,505,180|
 
   : Comparison of theoretical complexity and observed cmp Instructions.
 
@@ -218,13 +218,13 @@ range.
 
 ## 4.4 Overhead time Evaluation and Discussion
 
-   number of coordinates   time in seconds  
-  ----------------------- ----------------- --
-          10,000                0.036       
-          50,000                0.180       
-          100,000               0.364       
-          500,000               1.839       
-         1,000,000              3.649       
+   |number of coordinates|time in seconds| 
+   |:---:|:---:|
+   |10,000|0.036|       
+   |50,000|0.180|       
+   |100,000|0.364|      
+   |500,000|1.839|      
+   |1,000,000|3.64|9      
 
   : Running time excluding the sorting time.
 
