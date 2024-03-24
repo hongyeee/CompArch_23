@@ -168,13 +168,13 @@ size was subjected to three trials.
 
 ## 4.2 Runtime Evaluation and Discussion
 
-   number of coordinates   time in seconds   cmp Instructions per second
-  ----------------------- ----------------- -----------------------------
-          10,000                0.125                799,716,480
-          50,000                4.501                555,427,535
-          100,000              17.997                555,556,611
-          500,000              440.835               567,137,667
-         1,000,000            1851.317               540,203,207
+   |number of coordinates | time in seconds | cmp Instructions per second|
+   |:---:|:---:|:---:|
+   |10,000|0.125|799,716,480|
+   |50,000|4.501|555,427,535|
+   |100,000|17.997|555,556,611|
+   |500,000|440.835|567,137,667|
+   |1,000,000|1851.317| 540,203,207|
 
   : Runtimes and cmp Instructions per second of the sorting program.
 
